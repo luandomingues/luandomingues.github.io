@@ -5,71 +5,121 @@
 	font-family: helvetica, Arial;
 }
 
+html {
+	height: 100%;
+}
+
+body {
+	background: 
+		linear-gradient(
+			rgba(0, 0, 0, 0.7), 
+			rgba(0, 0, 0, 0.7)
+		), 
+		url('city.jpg')
+		no-repeat;
+
+ 	background-size: cover;
+ 	height: 100%;
+}
+
 header{
-	min-height: 80px;
-	background-color: #20639B;
-	padding: 10px
-}
-
-h1{
-	color: white;
-	text-align: center;
-	margin: 0 0 50px 0;
-	text-shadow: 1px 1px 1px #111111;
-}
-
-p{
-	color:white;
-	font-size: 15px;
-	text-shadow: 1px 1px 1px #111111;
-
-}
-
-footer{
-	clear: both;
-	min-height: 50px;
-	background-color: #20639B;
-	text-align: center;
-	padding: 10px;
-
-}
-img {
-  border-radius: 50%;
-  height: 200px;
-  padding:2px;
-  border:2px solid #021a40;
-  background-color:#20639B;
+	padding: 20px 50px 40px 20px;
 }
 
 /* IDS */
-#principal{
-	clear: both;
-	background-image: url('city.jpg');
-	background-size: 100%;
-	height: 475px;
-	padding: 100px 0 0 0;
-}
+#logo{
+	color: white;
+	text-shadow: 2px 2px 0 #000000; 
 
-#img{
+
+}
+ /* This is the image, links and text on the center of the home page */
+#centeritemcontainer{
+	position: absolute;
+	margin: auto;
+	top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+	height: 300px;
+	width: 300px;
+}
+#profileimagecontainer{
+	position: absolute;
+	height: 70%;
+	width: 100%;
+}
+#profileimage{
+	position: absolute;
+	margin: auto;
+	top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;
+
+	border-radius: 50%;
+  	height: 90%;
+ 	padding:1%;
+ 	background-color: white /* #20639B */;
+}
+ #containerofcaption{
+ 	position: absolute;
+ 	margin: 70% 0 0 0;
+ 	display: table;
+ 	height: 15%;
+ 	width: 100%; 	
+}
+ #containeroflinks{
+ 	position: absolute;
+ 	margin: 85% 0 0 0;
+ 	display: table;
+ 	height: 15%;
+ 	width: 100%; 	
+}
+#captionbelowimg{
+	text-shadow: 2px 2px 0 #000000; 
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
 	text-align: center;
 }
-
-#logo{
-	float: left;
-}
-
-#menu{
-	margin-top: 15px;
-	float: right;
-}
+#linksbelowimg{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+ }
 
 /* Class */
-.container{
-	width: 1080px;
-	margin: auto;
+
+	/* Sytles links on header */
+.headerlinks{
+	text-shadow: 2px 2px 0 #000000;
+	text-decoration: none;
+	color: white /* #20639B */;
+	padding: 20px 20px 20px 20px;
+}
+.headerlinks:hover{
+	background-color: #20639B;
+	color: white;
+}
+	/* Styles links below central image */
+.belowimglinks{
+	text-shadow: 2px 2px 0 #000000;
+	text-decoration: none;
+	color: white /* #20639B */;
+	padding: 10px 20px 10px 20px;
+	margin: 0 5px 0 5px;
+	border: 2px solid white;
+}
+.belowimglinks:hover{
+	background-color: #20639B;
+	color: white;
 }
 
-/*.efeito{
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 50px;
-}*/
+	/* align block elements */
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
