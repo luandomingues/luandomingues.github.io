@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 
-	<title>Página completa</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Página completa</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
 
-</head>
+	</head>
 
-<body>
-		
-	<!-- Cabeçalho -->
-	<header> 
+	<body class="flex flex--column">
+			
+		<!-- Cabeçalho -->
+		<header class="l-header flex flex--cross_stretch_items"> 
 
-		<!-- Logo -->
-		<div id="logo" class="alignleft">
-			Luan Felipe Rocha Domingues
-		</div>
-
-		<!-- HeaderLlinks -->
-		<div class="alignright">
-			<a class="headerlinks" href="home">Home</a>
-			<a class="headerlinks" href="home">Resume</a>
-			<a class="headerlinks" href="home">Github repo</a>
-			<a class="headerlinks" href="home">Projects</a>
-		</div>
-
-	</header>
-
-	<!-- Conteúdo -->
-	<div>
-
-		<div id="centeritemcontainer">
-			<div id="profileimagecontainer">
-				<img id="profileimage" src="me.jpg">
+			<!-- Logo -->
+			<div class="left flex">
+				<div class="logo flex--cross_center_self">Luan Felipe Rocha Domingues</div>
 			</div>
-			<div id="containerofcaption">
-				<div id="captionbelowimg">
+
+			<!-- HeaderLlinks -->
+			<nav class="right flex flex--cross_stretch_items">
+				<ul class="flex flex--list flex--cross_stretch_items flex--links_center">
+					<li><a class="links" href="home">Home</a></li>
+					<li><a class="links" href="home">Resume</a></li>
+					<li><a class="links" href="home">Github repo</a></li>
+					<li><a class="links" href="home">Projects</a></li>
+				</ul>
+			</nav>
+
+		</header>
+
+		<!-- Conteúdo -->
+		<main class="l-main flex flex--cross_center_items flex--justify_center_content">
+
+			<div class="l-central_container flex flex--column flex--cross_center_items">
+				<img class="image image--round image--border" src="me.jpg">
+				<div class="caption">
 					Engineer/ Hobbyist developer
 				</div>
-			</div>
-			<div id="containeroflinks">
-				<div id="linksbelowimg">
-				 	<a class="belowimglinks" href="home">Resume</a>
-				 	<a class="belowimglinks" href="home">Contact</a>
+				<div class="links--container">
+				 	<a class="links links--border" href="home">Resume</a>
+				 	<a class="links links--border" href="home">Contact</a>
 			 	</div>
 			</div>
-		</div>
 
-	</div>	
+		</main>	
 
-	<!-- Rodapé -->
-	<footer></footer>
+		<!-- Rodapé -->
+		<footer></footer>
 
-</body>
+	</body>
 
 </html>

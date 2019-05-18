@@ -1,15 +1,18 @@
-/* TAGS */
+/* My first attempt at modular css using SMACSS */
+
+/* Base */
 *{
-	margin: 0;
-	padding: 0;
+	box-sizing: border-box;
 	font-family: helvetica, Arial;
 }
 
-html {
+html, body{
 	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
-
-body {
+html {
 	background: 
 		linear-gradient(
 			rgba(0, 0, 0, 0.7), 
@@ -17,109 +20,121 @@ body {
 		), 
 		url('city.jpg')
 		no-repeat;
-
  	background-size: cover;
- 	height: 100%;
 }
 
-header{
-	padding: 20px 50px 40px 20px;
+ul{
+	margin: 0;
+	padding: 0;
 }
 
-/* IDS */
-#logo{
-	color: white;
-	text-shadow: 2px 2px 0 #000000; 
-
-
+li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
- /* This is the image, links and text on the center of the home page */
-#centeritemcontainer{
-	position: absolute;
-	margin: auto;
-	top: 0;  
-    bottom: 0;  
-    left: 0;  
-    right: 0;  
+
+a, a:link, a:hover, a:active, a:visited{
+	text-decoration: none;
+}
+
+/* Layout */
+.l-header{
+	flex: 0 0 80px;
+	width: 100%;
+}
+.l-header .logo{
+	padding: 0 0 0 40px;
+}
+
+.l-main{
+	flex: 1 0 auto;
+}
+
+.l-central_container{
 	height: 300px;
 	width: 300px;
 }
-#profileimagecontainer{
-	position: absolute;
+.l-central_container .image{
 	height: 70%;
-	width: 100%;
 }
-#profileimage{
-	position: absolute;
+.l-central_container .caption{
+	margin-top: 20px;
+}
+.l-central_container .links--container{
+	margin-top: 30px;
+}
+
+/*Modules*/
+.flex{
+	display: flex;
+}
+.flex--column{
+	flex-direction: column;
+}
+.flex--justify_center_content{
+	justify-content: center;
+}
+.flex--justify_center_items{
+	justify-items: center;
+}
+.flex--cross_stretch_items{
+	align-items: stretch;
+}
+.flex--cross_center_items{
+	align-items: center;
+}
+.flex--cross_stretch_self{
+	align-self:stretch; 
+}
+.flex--cross_center_self{
+	align-self: center;
+}
+.flex--list li{
+	display: flex;
+}
+.flex--links_center a{
+	display: flex;
+	align-items: center;
+}
+
+
+.left{
+	margin-right: auto; 
+}
+.right{
+	margin-left: auto;
+}
+.center{
 	margin: auto;
-	top: 0;  
-    bottom: 0;  
-    left: 0;  
-    right: 0;
+}
 
+.logo{
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+.image--round{
 	border-radius: 50%;
-  	height: 90%;
- 	padding:1%;
- 	background-color: white /* #20639B */;
 }
- #containerofcaption{
- 	position: absolute;
- 	margin: 70% 0 0 0;
- 	display: table;
- 	height: 15%;
- 	width: 100%; 	
+.image--border{
+	border: 3px solid white;
 }
- #containeroflinks{
- 	position: absolute;
- 	margin: 85% 0 0 0;
- 	display: table;
- 	height: 15%;
- 	width: 100%; 	
-}
-#captionbelowimg{
-	text-shadow: 2px 2px 0 #000000; 
-	color: white;
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
-#linksbelowimg{
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
- }
 
-/* Class */
-
-	/* Sytles links on header */
-.headerlinks{
-	text-shadow: 2px 2px 0 #000000;
-	text-decoration: none;
-	color: white /* #20639B */;
-	padding: 20px 20px 20px 20px;
-}
-.headerlinks:hover{
-	background-color: #20639B;
+.caption{
 	color: white;
+	text-shadow: 2px 2px black;
 }
-	/* Styles links below central image */
-.belowimglinks{
-	text-shadow: 2px 2px 0 #000000;
-	text-decoration: none;
-	color: white /* #20639B */;
-	padding: 10px 20px 10px 20px;
-	margin: 0 5px 0 5px;
+
+.links{
+	color: white;
+	text-shadow: 2px 2px black;
+	padding: 0 20px 0 20px;
+}
+.links:hover{
+	background-color: #303C6C;
+}
+.links--border{
+	padding: 10px 20px;
 	border: 2px solid white;
-}
-.belowimglinks:hover{
-	background-color: #20639B;
-	color: white;
-}
-
-	/* align block elements */
-.alignleft{
-	float: left;
-}
-.alignright{
-	float: right;
 }
