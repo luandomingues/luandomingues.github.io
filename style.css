@@ -1,4 +1,4 @@
-/* My first attempt at modular css using SMACSS */
+/* My second attempt at modular CSS using SMACSS and Grid CSS */
 
 /* Base */
 *{
@@ -39,102 +39,82 @@ a, a:link, a:hover, a:active, a:visited{
 }
 
 /* Layout */
-.l-header{
-	flex: 0 0 80px;
-	width: 100%;
+.l-body{
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 80px auto 0;
 }
-.l-header .logo{
-	padding: 0 0 0 40px;
+.l-header{
+	display: grid;
+	grid-template-columns: max-content auto;
 }
 
 .l-main{
-	flex: 1 0 auto;
-}
-
-.l-central_container{
-	height: 300px;
-	width: 300px;
-}
-.l-central_container .image{
-	height: 70%;
-}
-.l-central_container .caption{
-	margin-top: 20px;
-}
-.l-central_container .links--container{
-	margin-top: 30px;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	align-items: center;
+	justify-items: center;
 }
 
 /*Modules*/
-.flex{
-	display: flex;
-}
-.flex--column{
-	flex-direction: column;
-}
-.flex--justify_center_content{
-	justify-content: center;
-}
-.flex--justify_center_items{
-	justify-items: center;
-}
-.flex--cross_stretch_items{
-	align-items: stretch;
-}
-.flex--cross_center_items{
-	align-items: center;
-}
-.flex--cross_stretch_self{
-	align-self:stretch; 
-}
-.flex--cross_center_self{
-	align-self: center;
-}
-.flex--list li{
-	display: flex;
-}
-.flex--links_center a{
-	display: flex;
-	align-items: center;
-}
-
-
-.left{
-	margin-right: auto; 
-}
-.right{
-	margin-left: auto;
-}
-.center{
-	margin: auto;
-}
-
 .logo{
+	display: grid;
+	align-items: center;
+	margin-left: 30px;
 	color: white;
 	text-shadow: 2px 2px black;
 }
 
-.image--round{
-	border-radius: 50%;
-}
-.image--border{
-	border: 3px solid white;
-}
 
-.caption{
+.nav_bar{
+	display: grid;
+	justify-items: end;
+}
+.nav_bar ul{
+	display: grid;
+	grid-template-columns: repeat(4,max-content);
+}
+.nav_bar li{
+	display: grid;
+}
+.nav_bar a{
+	display: grid;
+	align-items: center;
+	justify-items: center;
 	color: white;
 	text-shadow: 2px 2px black;
+	padding: 0 20px 0 20px;	
 }
-
-.links{
-	color: white;
-	text-shadow: 2px 2px black;
-	padding: 0 20px 0 20px;
-}
-.links:hover{
+.nav_bar a:hover{
 	background-color: #303C6C;
 }
-.links--border{
+
+
+.profile_box{
+	display: grid;
+	height: 300px;
+	width: 300px;
+	grid-template-columns: 100%;
+	grid-template-rows: 70% 15% 15%;
+	justify-items: center;
+	align-items: center;
+}
+.profile_box img{
+	border-radius: 50%;
+	border: 3px solid white;
+	height: 95%;
+}
+.profile_box .caption{
+	color: white;
+	text-shadow: 2px 2px black;
+}
+.profile_box a{
+	color: white;
+	text-shadow: 2px 2px black;
 	padding: 10px 20px;
 	border: 2px solid white;
+}
+.profile_box a:hover{
+	background-color: #303C6C;
 }
