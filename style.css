@@ -6,12 +6,6 @@
 	font-family: helvetica, Arial;
 }
 
-html, body{
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
 html {
 	background: 
 		linear-gradient(
@@ -21,6 +15,13 @@ html {
 		url('city.jpg')
 		no-repeat;
  	background-size: cover;
+}
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
 }
 
 ul{
@@ -117,4 +118,18 @@ a, a:link, a:hover, a:active, a:visited{
 }
 .profile_box a:hover{
 	background-color: #303C6C;
+}
+
+/* Media query */
+@media (max-width: 768px){
+	.l-header {
+		grid-template-columns: auto;
+		grid-template-rows: 80px;
+	}
+
+	.logo{ display: none; }
+
+	.nav_bar{
+		justify-items: center;
+	}
 }
