@@ -44,20 +44,29 @@ a{
 
 /* Layout */
 .l-body{
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 100fr;
 	grid-template-columns: 100fr;
+	-ms-grid-rows: 80px 100fr;
 	grid-template-rows: 80px 100fr;
-	grid-template-areas: "l-header"
+	    grid-template-areas: "l-header"
 						 "l-main";
 }
 
 .l-header{
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
 	grid-area: l-header;
+	display: -ms-grid;
 	display: grid;
 }
 
 .l-main{
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
 	grid-area: l-main;
+	display: -ms-grid;
 	display: grid;
 	align-items: center;
 	justify-items: center;
@@ -70,18 +79,23 @@ a{
 }
 
 .nav_bar{
+	display: -ms-grid;
 	display: grid;
 	width: 100%;
 }
 .nav_bar ul{
+	display: -ms-grid;
 	display: grid;
 	width: 100%;
+	-ms-grid-columns: (1fr)[4];
 	grid-template-columns: repeat(4, 1fr);
 }
 .nav_bar li{
+	display: -ms-grid;
 	display: grid;
 }
 .nav_bar a{
+	display: -ms-grid;
 	display: grid;
 	align-items: center;
 	text-align: center;
@@ -93,29 +107,40 @@ a{
 }
 
 .profile_box{
+	display: -ms-grid;
 	display: grid;
 	align-items: center;
 	justify-items: center;
+	-ms-grid-columns: 100fr;
 	grid-template-columns: 100fr;
+	-ms-grid-rows: 150px 50px 50px;
 	grid-template-rows: 150px 50px 50px;
-	grid-template-areas: "figure"
+	    grid-template-areas: "figure"
 						 "caption"
 						 "links";
 }
 .profile_box img{
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
 	grid-area: figure;
+	display: -ms-grid;
 	display: grid;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	height: 95%;
  	border-radius: 50%;
 	border: 3px solid white;
 }
 .profile_box p{
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
 	grid-area: caption;
 	color: white;
 	text-shadow: 2px 2px black;
 }
 .profile_box nav{
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
 	grid-area: links;
 	display: flex;
 }
@@ -133,13 +158,15 @@ a{
 /* Media Queries */
 @media (min-width: 768px){
 	.l-header{
+		-ms-grid-columns: 268px 500px;
 		grid-template-columns: 268px 500px;
-		grid-template-areas: "logo nav_bar";
+		    grid-template-areas: "logo nav_bar";
 		justify-content: space-between;
 	}
 
 	.logo{
 		grid-area: logo;
+		display: -ms-grid;
 		display: grid;
 		height: 100%;
 		align-items: center;
@@ -158,4 +185,14 @@ a{
 		width: 300px;
 	}
 
+}
+@media (min-width: 768px){
+	.logo{
+		-ms-grid-row: 1;
+		-ms-grid-column: 1;
+	}
+	.nav_bar{
+		-ms-grid-row: 1;
+		-ms-grid-column: 2;
+	}
 }
