@@ -117,8 +117,8 @@ a{
 }
 .profile_box img{
 	display: grid;
-	align-self: center;
-	height: 98%; 
+	object-fit: contain;
+	height: 95%;
  	border-radius: 50%;
 	border: 3px solid white;
 }
