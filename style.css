@@ -96,8 +96,8 @@ a{
 
 .profile_box{
 	display: grid;
-	height: 300px;
-	width: 300px;
+	height: 200px;
+	width: 250px;
 	align-items: center;
 	justify-items: center;
 	grid-template-columns: 100fr;
@@ -157,6 +157,11 @@ a{
 
 	.nav_bar{
 		grid-area: nav_bar;
+	}
+
+	.profile_box{
+		height: 300px;
+		width: 300px;
 	}
 
 }
