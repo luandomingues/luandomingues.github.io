@@ -107,15 +107,16 @@ a{
 }
 .profile_box figure{
 	grid-area: figure;
+	display: grid;
 	height: 100%;
 	width: 100%;
-	display: grid;
 	align-items: center;
 	justify-items: center;
 	grid-template-columns: 100fr;
 	grid-template-rows: 80fr 20fr;
 }
 .profile_box img{
+	display: grid;
 	height: 95%; 
  	border-radius: 50%;
 	border: 3px solid white;
