@@ -1,12 +1,13 @@
-/* My second attempt at modular CSS using SMACSS and Grid CSS */
+/* Mobile first approach */
 
 /* Base */
 *{
 	box-sizing: border-box;
-	font-family: helvetica, Arial;
+	font-family: Helvetica, Arial;
+	font-size: 100%;
 }
 
-html {
+html{
 	background: 
 		linear-gradient(
 			rgba(0, 0, 0, 0.7), 
@@ -21,60 +22,63 @@ html, body{
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 16px;
 }
 
 ul{
 	margin: 0;
 	padding: 0;
 }
-
-li{
-	margin: 0;
-	padding: 0;
+li {
 	list-style: none;
 }
 
-a, a:link, a:hover, a:active, a:visited{
-	text-decoration: none;
+figure{
+	margin: 0;
+	padding: 0;
 }
+
+a{
+ text-decoration: none;
+}
+
 
 /* Layout */
 .l-body{
 	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: 80px auto 0;
+	grid-template-columns: 100fr;
+	grid-template-rows: 80px 100fr;
+	grid-template-areas: "l-header"
+						 "l-main";
 }
+
 .l-header{
+	grid-area: l-header;
 	display: grid;
-	grid-template-columns: max-content auto;
+	width: 100%;
 }
 
 .l-main{
+	grid-area: l-main;
 	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
+	width: 100%;
 	align-items: center;
 	justify-items: center;
 }
 
-/*Modules*/
-.logo{
-	display: grid;
-	align-items: center;
-	margin-left: 30px;
-	color: white;
-	text-shadow: 2px 2px black;
-}
 
+/* Modules */
+.logo{
+	display: none;	
+}
 
 .nav_bar{
 	display: grid;
-	justify-items: end;
+	width: 100%;
 }
 .nav_bar ul{
 	display: grid;
-	grid-template-columns: repeat(4,max-content);
+	width: 100%;
+	grid-template-columns: repeat(4, 1fr);
 }
 .nav_bar li{
 	display: grid;
@@ -85,28 +89,38 @@ a, a:link, a:hover, a:active, a:visited{
 	justify-items: center;
 	color: white;
 	text-shadow: 2px 2px black;
-	padding: 0 20px 0 20px;	
 }
 .nav_bar a:hover{
 	background-color: #303C6C;
 }
 
-
 .profile_box{
 	display: grid;
 	height: 300px;
 	width: 300px;
-	grid-template-columns: 100%;
-	grid-template-rows: 70% 15% 15%;
-	justify-items: center;
 	align-items: center;
+	justify-items: center;
+	grid-template-columns: 100fr;
+	grid-template-rows: 85fr 15fr;
+	grid-template-areas: "figure"
+						 "links";
+}
+.profile_box figure{
+	grid-area: figure;
+	height: 100%;
+	width: 100%;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-template-columns: 100fr;
+	grid-template-rows: 80fr 20fr;
 }
 .profile_box img{
-	border-radius: 50%;
+	height: 95%; 
+ 	border-radius: 50%;
 	border: 3px solid white;
-	height: 95%;
 }
-.profile_box .caption{
+.profile_box figcaption{
 	color: white;
 	text-shadow: 2px 2px black;
 }
@@ -114,22 +128,34 @@ a, a:link, a:hover, a:active, a:visited{
 	color: white;
 	text-shadow: 2px 2px black;
 	padding: 10px 20px;
+	margin: 0 5px;
 	border: 2px solid white;
 }
 .profile_box a:hover{
 	background-color: #303C6C;
 }
 
-/* Media query */
-@media (max-width: 768px){
-	.l-header {
-		grid-template-columns: auto;
-		grid-template-rows: 80px;
+/* Media Queries */
+@media (min-width: 768px){
+	.l-header{
+		grid-template-columns: max-content 500px;
+		grid-template-areas: "logo nav_bar";
+		justify-content: space-between;
 	}
 
-	.logo{ display: none; }
+	.logo{
+		grid-area: logo;
+		display: grid;
+		height: 100%;
+		align-items: center;
+		padding: 0 30px 0 30px;
+		color: white;
+		text-shadow: 2px 2px black;
+		background-color: black;
+	}
 
 	.nav_bar{
-		justify-items: center;
+		grid-area: nav_bar;
 	}
+
 }
