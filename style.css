@@ -173,9 +173,8 @@ p{
 	
 }
 .profile_box img{
-	height: 96%;
+	height: 140px;
 	border-radius: 50%;
-
 	border: 3px solid white;
 }
 .profile_box p{
@@ -250,6 +249,9 @@ p{
 	}
 	.profile_box .img{
 		height: 200px;
+	}
+	.profile_box img{
+		height: 190px;
 	}
 }
 
@@ -368,7 +370,7 @@ p{
 		        justify-content: initial;
 	}
 	.profile_box img{
-		height: 96%;
+		height: 140px;
 	 	border-radius: 50%;
 		border: 3px solid white;
 	}
@@ -471,7 +473,7 @@ p{
 			grid-template-rows: 1fr;
 		}
 		.profile_box img{
-
+			height: 190px;
 		}
 
 	}
