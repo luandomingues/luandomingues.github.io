@@ -1,0 +1,220 @@
+/* Base */
+html {
+ 	font-family: Helvetica, Arial;
+ 	text-shadow: 2px 2px black;
+	font-size: 100%;
+}
+html, body {
+	width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+/* Layout */
+.l-body{
+	display: flex;
+	flex-direction: column;
+
+}
+@supports (display:grid) {
+	.l-body{
+	display: grid;
+	grid-template-rows: 100vh auto;
+	grid-template-areas: "top"
+						 "rest";
+	}
+}
+
+.l-top{
+	display: flex;
+	flex-direction: column;
+
+	height: 100vh;
+	width: 100%;
+
+	background: 
+		linear-gradient(
+			rgba(11,23,42, 0.9), 
+			rgba(11,23,42, 0.9)
+		), 
+		url('../resources/city.jpg')
+		no-repeat;
+ 	background-size: cover;
+}
+@supports (display: grid){
+	.l-top {
+		grid-area: top;
+		display: grid;
+		grid-template-rows: auto 1fr;
+		grid-template-areas: "header"
+							 "main";
+	}
+}
+
+.l-header {
+	grid-area: header;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.l-main {
+	grid-area: main;
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+.l-footer{
+	grid-area: rest;
+	display: flex;
+	height: 100px;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	background-color: #463940;
+	font-family: Chalkduster;
+	font-size: 0.7em;
+}
+
+
+/* Modules */
+.logo {
+	height: 80px;
+}
+.logo img {
+	height: 100%;
+	width: 100%;
+}
+
+.nav_bar {
+	display: flex;
+	height: 80px;
+	width: 100%;
+	max-width: 500px;
+	justify-content: center;
+}
+.nav_bar ul {
+	display: flex;
+	width: 100%;
+}
+.nav_bar li {
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0;
+}
+.nav_bar a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-grow: 1;
+	padding: 0 10px;
+	color: white;
+}
+.nav_bar a:hover {
+	background-color: #BC4123;
+}
+
+.profile_box {
+	display: flex;
+	flex-direction: column;
+	height: 250px;
+	width: 250px;
+	align-items: center;
+}
+.profile_box .img_container {
+	display: flex;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	
+	/* Hides alt text when image is not loaded */
+	text-indent: 100%;
+	white-space: nowrap;
+}
+.profile_box .img_container::after{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	box-shadow: 0 0 0 3px #BC4123 inset;
+	border-radius: 50%;
+	z-index: 3;
+	content: "";
+}
+.profile_box img {
+	display: block;
+	height: 100%;
+	width: auto;
+}
+.profile_box p {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	color: white;
+}
+.profile_box nav {
+	display: flex;
+	align-items: center;
+	height: 50px;
+}
+.profile_box a {
+	align-items: center;
+	color: white;
+	margin: 0 5px;
+	padding: 10px 20px;
+	border: 2px solid #BC4123;	
+}
+.profile_box a:hover {
+	background-color: #BC4123;
+}
+
+@media (min-width: 768px) {
+	/* Layout */
+	.l-header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	/* Module */
+	.profile_box {
+		height: 300px;
+	}
+	.profile_box .img_container {
+		height: 200px;
+		width: 200px;
+	}
+}
+
+/* This is to avoid FOUC 
+(visibility is set to hidden and opacity to 0 in html before 
+style is loaded)*/
+html{
+	visibility: visible;
+	opacity: 1;
+}
