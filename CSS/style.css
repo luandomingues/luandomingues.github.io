@@ -52,7 +52,7 @@ p {
 	display: flex;
 	flex-direction: column;
 
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 
 	background: 
@@ -210,6 +210,11 @@ p {
 		width: 200px;
 	}
 }
+@media (max-height: 460px){
+		.l-body{
+			grid-template-rows: 460px auto;
+		}
+	}
 
 /* This is to avoid FOUC 
 (visibility is set to hidden and opacity to 0 in html before 
